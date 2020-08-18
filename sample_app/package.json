@@ -1,0 +1,34 @@
+{
+  "name": "sample_app",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "react-native start --reset-cache",
+    "clean:rn": "rm -rf /tmp/metro-* && rm -rf node_modules && npm install && watchman watch-del-all && rm -rf $TMPDIR/haste-map-react-native-packager-* && rm -rf $TMPDIR/metro-bundler-cache-* && rm -rf $TMPDIR/react-*",
+    "clean:ios": "rm -rf ios/build && rm -rf ios/Pods && rm -rf ios/Podfile.lock && cd ios/ && pod install && pod update && cd ..",
+    "clean:android": "cd android/ && ./gradlew clean && cd ..",
+    "clean": "npm run clean:rn && npm run clean:ios && npm run clean:android"
+  },
+  "dependencies": {
+    "react": "16.11.0",
+    "react-native": "0.62.2",
+    "react-native-gesture-handler": "^1.6.1",
+    "react-native-render-html": "^4.2.3",
+    "react-native-webview": "^10.7.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.2",
+    "@babel/runtime": "^7.6.2",
+    "@react-native-community/eslint-config": "^1.0.0",
+    "@types/react-native": "^0.62.2",
+    "@typescript-eslint/eslint-plugin": "^2.25.0",
+    "@typescript-eslint/parser": "^2.25.0",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "metro-react-native-babel-preset": "^0.58.0",
+    "prettier": "^2.0.2",
+    "react-test-renderer": "16.11.0",
+    "typescript": "^3.8.3"
+  }
+}

@@ -1,0 +1,3 @@
+[submodule "react-native-iso-ui"]
+	path = react-native-iso-ui
+	url = https://github.com/aleixo/react-native-iso-ui.git
