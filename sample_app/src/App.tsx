@@ -36,7 +36,13 @@ const Scroll = () => {
           }}
           title="Change to english"
         />
-        <Button langToggle={['EN', 'PT']} title="Change to english AUTO" />
+        <Button
+          langToggle={['EN', 'PT']}
+          title="Change to english AUTO"
+          onToggle={(value) => {
+            return <Text>CUSTOM RENDER {value}</Text>;
+          }}
+        />
         <Button
           onPress={() => {
             dispatcher.i18n({ newLanguage: 'PT' });
@@ -63,6 +69,11 @@ const Scroll = () => {
         />
         <Button fontScaleToggle={[2, 1, 0.5]} title="Scale font AUTO" />
         <Button
+          fontScaleToggle={[2, 1, 0.5]}
+          title="Scale toggle custom render"
+          onToggle={(value) => <Text>SCALE FONT CUSTOM RENDER {value}</Text>}
+        />
+        <Button
           onPress={() => {
             dispatcher.theme({ theme: 'light' });
           }}
@@ -70,6 +81,11 @@ const Scroll = () => {
         />
         <Button onPress={dispatcher.theme} title="Theme default" />
         <Button themeToggle={['light', 'default']} title="Theme toggle AUTO" />
+        <Button
+          themeToggle={['light', 'default']}
+          title="Theme toggle custom render"
+          onToggle={(value) => <Text>Custom render theme {value}</Text>}
+        />
         <Button modifiers="round" size={100} title="Test modifiers" />
         <Button
           modifiers="round button_red"
@@ -92,6 +108,16 @@ const App: React.FC<{}> = () => {
       <StatusBar barStyle="dark-content" />
       <Provider
         initialLang="PT"
+        sizes={{
+          XL: 30,
+          L: 26,
+          M: 22,
+          S: 20,
+          XS: 18,
+          XXS: 16,
+          label: 14,
+          paragraph: 12,
+        }}
         colors={{
           default: {
             text: 'blue',
