@@ -18,7 +18,7 @@ const Scroll = () => {
   return (
     <ScrollView style={{ backgroundColor: 'white', flex: 1 }}>
       <View m={20} p={20} shadow>
-        <Text h1>View with shadow</Text>
+        <Text h1>TEXT</Text>
       </View>
       <View m={10}>
         <Text h1>H1</Text>
@@ -68,11 +68,18 @@ const Scroll = () => {
           }}
           title="Theme light (changes text color)"
         />
+        <Button onPress={dispatcher.theme} title="Theme default" />
+        <Button themeToggle={['light', 'default']} title="Theme toggle AUTO" />
+        <Button modifiers="round" size={100} title="Test modifiers" />
         <Button
-          onPress={() => {
-            dispatcher.theme();
-          }}
-          title="Theme default"
+          modifiers="round button_red"
+          size={100}
+          title="Test custom modifiers"
+        />
+        <Button
+          modifiers="button_red bordered"
+          size={100}
+          title="Test custom modifiers"
         />
       </View>
     </ScrollView>
@@ -88,11 +95,19 @@ const App: React.FC<{}> = () => {
         colors={{
           default: {
             text: 'blue',
+            border: 'red',
+            backgroundColor: 'yellow',
           },
           light: {
             text: 'grey',
+            border: 'blue',
           },
         }}
+        modifiers={(currentColor) => ({
+          button_red: {
+            color: 'red',
+          },
+        })}
         strings={{
           PT: {
             MY_COMPONENT: {
