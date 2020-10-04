@@ -1,3 +1,4 @@
-[submodule "react-native-iso-ui"]
-	path = react-native-iso-ui
-	url = https://github.com/aleixo/react-native-iso-ui.git
+
+[submodule "react-native-essentialia"]
+	path = react-native-essentialia
+	url = https://github.com/aleixo/react-native-essentialia.git
